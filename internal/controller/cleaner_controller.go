@@ -228,7 +228,7 @@ func (r *CleanerReconciler) removeReport(ctx context.Context,
 		return err
 	}
 
-	return fmt.Errorf("report instance still present")
+	return nil
 }
 
 func schedule(ctx context.Context, cleanerScope *scope.CleanerScope, jitterWindowInSeconds int,

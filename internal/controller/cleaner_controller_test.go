@@ -139,8 +139,8 @@ var _ = Describe("CleanerClient", func() {
 
 		logger := textlogger.NewLogger(textlogger.NewConfig())
 		err = controller.RemoveReport(reconciler, context.TODO(), scope, logger)
-		// Expect err to not be nil cause Report was present before above call
-		Expect(err).ToNot(BeNil())
+		// Expect err to be nil because Report was deleted successfully.
+		Expect(err).To(BeNil())
 
 		err = controller.RemoveReport(reconciler, context.TODO(), scope, logger)
 		// Expect err to be nil cause Report is not present anymore

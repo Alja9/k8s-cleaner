@@ -215,21 +215,21 @@ func (m *Manager) RemoveEntries(cleanerName string) {
 
 	for i := range m.inProgress {
 		if m.inProgress[i] == key {
-			removeFromSlice(m.inProgress, i)
+			m.inProgress = removeFromSlice(m.inProgress, i)
 			break
 		}
 	}
 
 	for i := range m.dirty {
 		if m.dirty[i] == key {
-			removeFromSlice(m.dirty, i)
+			m.dirty = removeFromSlice(m.dirty, i)
 			break
 		}
 	}
 
 	for i := range m.jobQueue {
 		if m.jobQueue[i] == key {
-			removeFromSlice(m.jobQueue, i)
+			m.jobQueue = removeFromSlice(m.jobQueue, i)
 			break
 		}
 	}
